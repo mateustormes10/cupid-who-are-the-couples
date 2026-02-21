@@ -209,6 +209,8 @@ select option {
   border: 1px solid var(--border);
   border-radius: 16px;
   background: var(--panel);
+  max-height: calc(100vh - 120px);
+  overflow: auto;
 }
 
 .credits .small { color: var(--muted); font-size: 13px; }
@@ -232,6 +234,20 @@ select option {
 
 .credits .devLink:hover {
   opacity: 0.9;
+}
+
+.creditsTheme2 {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.creditsTheme2 p {
+  margin: 8px 0;
+}
+
+.creditsTheme2 .langLabel {
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .godEndSprite {

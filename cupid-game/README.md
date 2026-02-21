@@ -1,35 +1,41 @@
-# Cupido: Quem são os casais?
+# Cupid: Who are the couples?
 
-Puzzle + Skill com física leve (HTML5 Canvas). Você controla Cupido e precisa **dar dois tiros** para criar um vínculo: o primeiro alvo entra em **AwaitingPair** e o próximo alvo atingido vira o par. Se errar… coisas estranhas podem acontecer.
-
-## Rodar (100% offline)
-
-Não existe backend de gameplay.
+Puzzle + Skill with light physics (HTML5 Canvas). You control Cupid and need to **take two shots** to create a bond: the first target enters **AwaitingPair** and the next target hit becomes the pair. If you miss… strange things can happen.
 
 
+## Theme 2:
+Cupid's Arrow is said to pierce through two people's hearts, forever binding them together. Or maybe cupid has to like, double-tap two different people, where, if the first arrow hits someone, then the next person cupid shoots is bound to the first person. But what happens if cupid misses on one of them? Could you be bound to like, a rock, or something? how do the mechanics of this thing even work? That's up for you to decide, in your game about bringing people together as cupid, or using your magic bow and arrow of love!
 
-## Controles
+## Play (100% offline)
 
-- Mouse: mover para mirar, **clique esquerdo** para atirar
-- Teclado:
-  - `ESC` pausa/retoma
-  - `R` reinicia a fase
-  - `M` mute
-  - `F3` debug (hitboxes + números de compatibilidade)
+There is no gameplay backend.
 
-## Estrutura
+1. Use XAMPP
+2. Copy the cupid-game folder into htdocs
+3. Run index.html
 
-Veja a pasta `public/`:
+## Controls
+
+- Mouse: move to aim, **left click** to shoot
+- Keyboard:
+
+- `ESC` pause/resume
+- `R` restart the level
+- `M` mute
+- `F3` debug (hitboxes + compatibility numbers)
+
+## Structure
+
+See the `public/` folder:
 
 - `public/styles/` CSS
-- `public/scripts/` código modular (ES6)
-- `public/assets/` SVG do logo da jam + placeholders
+- `public/scripts/` modular code (ES6)
+- `public/assets/` SVG of the jam logo + placeholders
 
 ## Cameo (Imaginary Game Studios)
 
-Inclui **Gobbo** como NPC especial. Em certos misbinds (ex.: Gobbo + cogumelo), eventos cômicos exclusivos acontecem.
+Includes **Gobbo** as a special NPC. In certain misbinds (e.g., Gobbo + mushroom), exclusive comedic events occur.
 
+## Theme
 
-## Tema
-
-“Cupid's arrow… double-tap…”: o jogo explora o absurdo mecânico de **vincular** coisas erradas quando o segundo tiro erra ou acerta objetos inanimados.
+“Cupid's arrow… double-tap…”: the game explores the absurd mechanic of **linking** the wrong things when the second shot misses or hits inanimate objects.

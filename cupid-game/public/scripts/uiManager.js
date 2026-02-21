@@ -32,6 +32,39 @@ export class UIManager {
     this._lastEndPayload = null;
   }
 
+  _renderCreditsTheme2() {
+    const root = document.getElementById('creditsTheme2');
+    if (!root) return;
+
+    root.innerHTML = '';
+
+    const heading = document.createElement('p');
+    const headingStrong = document.createElement('b');
+    headingStrong.textContent = 'Theme 2:';
+    heading.appendChild(headingStrong);
+    root.appendChild(heading);
+
+    const entries = [
+      {
+        lang: 'English',
+        text:
+          "Cupid's Arrow is said to pierce through two people's hearts, forever binding them together. Or maybe Cupid has to, like, double-tap two different people: if the first arrow hits someone, then the next person Cupid shoots is bound to the first person. But what happens if Cupid misses one of them? Could you be bound to a rock, or something? How do the mechanics of this thing even work? That's up for you to decide, in your game about bringing people together as Cupid, using your magic bow and arrow of love!"
+      }
+    ];
+
+    for (const entry of entries) {
+      const p = document.createElement('p');
+      const label = document.createElement('span');
+      label.className = 'langLabel';
+      label.textContent = `${entry.lang}: `;
+      const text = document.createElement('span');
+      text.textContent = entry.text;
+      p.appendChild(label);
+      p.appendChild(text);
+      root.appendChild(p);
+    }
+  }
+
   init() {
     this._wireI18n();
     this._buildLevelButtons();
@@ -153,6 +186,9 @@ export class UIManager {
     }
     const cCameo = document.getElementById('creditsCameo');
     if (cCameo) cCameo.innerHTML = 'Cameo: <b>Gobbo</b> (Imaginary Game Studios).';
+
+    this._renderCreditsTheme2();
+
     const cNote = document.getElementById('creditsNote');
     if (cNote) cNote.textContent = t('credits.note');
     if (this.ui.menu.btnCreditsBack) this.ui.menu.btnCreditsBack.textContent = lang === 'pt' ? 'Voltar' : lang === 'es' ? 'Volver' : 'Back';
