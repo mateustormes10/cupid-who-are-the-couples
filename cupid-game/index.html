@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cupido: Quem são os casais?</title>
+    <link rel="stylesheet" href="./public/styles/main.css?v=0.1.1" />
+    <link rel="stylesheet" href="./public/styles/ui.css?v=0.1.1" />
+    <link rel="stylesheet" href="./public/styles/animations.css?v=0.1.1" />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <div class="shell">
+        <canvas id="gameCanvas" width="960" height="540" aria-label="Cupido: Quem são os casais?"></canvas>
+
+        <div id="overlay" class="overlay">
+          <!-- MENU -->
+          <section id="screenMenu" class="screen is-active" role="dialog" aria-label="Menu">
+            <header class="screen__header">
+              <div class="brand">
+                <div id="brandTitle" class="brand__title">Cupido: Quem são os casais?</div>
+                <div id="brandSubtitle" class="brand__subtitle">Cupid • Binding • Chaos</div>
+              </div>
+              <img class="jamLogo" alt="Imaginary Game Mini Jam" src="./public/assets/ui/imaginary-mini-jam-logo.svg" />
+            </header>
+
+            <div class="menuGrid">
+              <div class="panel">
+                <h2 id="menuPlayTitle">Play</h2>
+                <p id="menuChooseLevel">Pick a short stage and create compatible bonds… or not.</p>
+                <div class="levelList" id="levelList"></div>
+              </div>
+
+              <div class="panel">
+                <h2 id="menuOptionsTitle">Options</h2>
+                <div class="row">
+                  <label id="menuVolumeLabel" for="volume">Volume</label>
+                  <input id="volume" type="range" min="0" max="1" step="0.01" value="0.7" />
+                </div>
+
+                <div class="row">
+                  <label id="menuLanguageLabel" for="languageSelect">Language</label>
+                  <select id="languageSelect" class="select">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="pt">Português</option>
+                  </select>
+                </div>
+                <div class="row">
+                  <button id="btnMute" class="btn">Mute (M)</button>
+                  <button id="btnCredits" class="btn">Credits</button>
+                </div>
+
+                <div class="hint">
+                  <div id="menuHintMouse"><b>Mouse</b>: aim + click to shoot</div>
+                  <div id="menuHintKeys"><b>ESC</b>: pause • <b>R</b>: restart • <b>F3</b>: debug</div>
+                </div>
+
+                <div class="achievementsPanel">
+                  <h3 id="menuAchievementsTitle">Achievements</h3>
+                  <div id="achievementsList" class="achievementsList" aria-label="Achievements"></div>
+                </div>
+              </div>
+            </div>
+
+            <footer class="screen__footer">
+              <small>
+                <span id="menuFooter">Offline • Singleplayer • No backend • Cameo: <b>Gobbo</b></span>
+              </small>
+            </footer>
+          </section>
+
+          <!-- PAUSE -->
+          <section id="screenPause" class="screen" role="dialog" aria-label="Pause">
+            <div class="center">
+              <h2 id="pauseTitle">Paused</h2>
+              <div class="row">
+                <button id="btnResume" class="btn">Resume (ESC)</button>
+                <button id="btnRestart" class="btn">Restart (R)</button>
+                <button id="btnBackToMenu" class="btn">Menu</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- END -->
+          <section id="screenEnd" class="screen" role="dialog" aria-label="End">
+            <img id="godEndSprite" class="godEndSprite" alt="God" src="" />
+            <div class="center">
+              <h2 id="endTitle">Fim</h2>
+              <p id="endSummary" class="summary"></p>
+              <div class="stars" id="endStars" aria-label="Stars"></div>
+              <div class="row">
+                <button id="btnNext" class="btn">Next stage</button>
+                <button id="btnRetry" class="btn">Retry (R)</button>
+                <button id="btnEndMenu" class="btn">Menu</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- CREDITS -->
+          <section id="screenCredits" class="screen" role="dialog" aria-label="Credits">
+            <div class="credits">
+              <h2 id="creditsTitle">Credits</h2>
+              <p id="creditsDev">
+                <span id="creditsDevLabel"></span>
+                <a
+                  id="creditsDevLink"
+                  class="devLink"
+                  href="https://www.linkedin.com/in/mateus-tormes-gervazioni/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                ></a>
+              </p>
+              <p id="creditsBody"></p>
+              <p id="creditsCameo"></p>
+              <p class="small" id="creditsNote"></p>
+              <a
+                class="jamLogoLink"
+                id="jamLogoLink"
+                href="https://itch.io/jam/imaginary-game-mini-jam-february-2026"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  id="jamLogo"
+                  class="jamLogo"
+                  src="./public/assets/images/imaginaryMiniJam.png"
+                  alt="Imaginary Game Mini Jam February 2026"
+                />
+              </a>
+              <div class="row">
+                <button id="btnCreditsBack" class="btn">Back</button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div id="hud" class="hud" aria-label="HUD">
+          <div class="hud__left">
+            <div class="pill" id="hudLevel">Stage</div>
+            <div class="pill" id="hudScore">Score: 0</div>
+            <div class="pill" id="hudCombo">Combo: x1</div>
+            <div class="pill" id="hudArrows">Arrows: 0</div>
+          </div>
+          <div class="hud__right">
+            <div class="pill" id="hudState">Idle</div>
+            <div class="pill" id="hudChaos">Chaos: 0%</div>
+            <div class="pill" id="hudTimer">00:00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./public/scripts/main.js?v=0.1.1"></script>
+  </body>
+</html>

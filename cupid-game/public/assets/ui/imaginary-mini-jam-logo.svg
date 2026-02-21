@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 220" role="img" aria-label="Imaginary Game Mini Jam">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ff4fa7"/>
+      <stop offset="1" stop-color="#55e0ff"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="10" width="800" height="200" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.2)"/>
+  <circle cx="120" cy="110" r="62" fill="url(#g)" opacity="0.9"/>
+  <path d="M90 118c20-26 40-26 60 0" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" opacity="0.9"/>
+  <path d="M120 64v92" stroke="white" stroke-width="10" stroke-linecap="round" opacity="0.9"/>
+  <text x="210" y="92" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="44" fill="white" font-weight="700">Imaginary Game</text>
+  <text x="210" y="142" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="30" fill="rgba(255,255,255,0.85)" font-weight="600">Mini Jam</text>
+  <text x="210" y="178" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="18" fill="rgba(255,255,255,0.7)">Offline • Singleplayer • Browser</text>
+</svg>
